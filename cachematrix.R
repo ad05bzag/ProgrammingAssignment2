@@ -7,7 +7,7 @@
 ################### FUNCTION START ################### 
 
 ## assign output of makeCacheMatrix() to some arbitraty value %NAME%
-## %choose_your_name% to be used as input for cacheSolve()
+## %NAME% to be used as input for cacheSolve()
 
 ## uncomment matrix_test to create 
 ## a 5x5 matrix with random integers from 0 to 20 for dummy calculations;
@@ -35,9 +35,7 @@ makeCacheMatrix <- function(x = matrix()) {
         list(set = set, get = get,
              set_inverse = set_inverse,
              get_inverse = get_inverse)
-        
-print("set output as %NAME%, use %NAME% as input for cachesolve")
-        
+                
 }
 
 ################### Description of cacheSolve() ################### 
@@ -54,7 +52,8 @@ cacheSolve <- function(x, ...) {
                 return(m)
         }
         data <- x$get()
-        m <- solve(data, ...) ## if m is NULL, calculate inverse with solve()
+        m <- solve(data, ...) ## if m is NULL, calculates inverse with solve()
         x$set_inverse(m)
+        message("inverse is equal to")
         m
 }
